@@ -12,19 +12,30 @@ body {
   font-family: 'Macondo', cursive;
   height: 100%;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   color: white;
   background-color: rgb(70, 70, 70);
 }
 
 input {
   display: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.con {
+  width: 80%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .content {
@@ -36,35 +47,53 @@ input {
   align-items: center;
   justify-content: start;
   transition: 0.5s;
-  margin-top: 2em;
 }
 
 /* .content__block */
 
 .content__block{
   display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.view__text {
+  height: 100%;
+  width: 35%;
+  overflow: hidden;
+}
+
+.content__text {
+  height: 100%;
+  width: 400%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: 0.5s;
+  
 }
 
 .content__block-text {
-  margin-left: 40px;
+  width: 25%;
+  height: 100%;
+  white-space:nowrap
 }
 
 .content__block-img {
-  height: 30rem;
-  width: 54rem;
+  height: 80%;
+  width: 70%;
   object-fit: contain;
   align-self: center;
 }
 
 .nav-buttons {
   display: flex;
+  justify-content: end;
   height: 2em;
   width: 8em;
-  position: absolute;
+  z-index: 10;
+  background-color: rgb(70, 70, 70);
 }
 
 .nav-buttons__item {
@@ -76,8 +105,18 @@ input {
   cursor: pointer;
 }
 
-.nav-buttons__item:hover {
+#slide1:not(:checked) ~ .con .nav-buttons label:nth-child(1):hover,
+#slide2:not(:checked) ~ .con .nav-buttons label:nth-child(2):hover,
+#slide3:not(:checked) ~ .con .nav-buttons label:nth-child(3):hover,
+#slide4:not(:checked) ~ .con .nav-buttons label:nth-child(4):hover {
   background-color: white;
+}
+
+#slide1:checked ~ .con .nav-buttons label:nth-child(1):hover,
+#slide2:checked ~ .con .nav-buttons label:nth-child(2):hover,
+#slide3:checked ~ .con .nav-buttons label:nth-child(3):hover,
+#slide4:checked ~ .con .nav-buttons label:nth-child(4):hover {
+  border-color: white;
 }
 
 #slide1:checked ~ .content {
@@ -96,10 +135,26 @@ input {
   margin-left: -600%;
 }
 
-#slide1:checked ~ .nav-buttons label:nth-child(1),
-#slide2:checked ~ .nav-buttons label:nth-child(2),
-#slide3:checked ~ .nav-buttons label:nth-child(3),
-#slide4:checked ~ .nav-buttons label:nth-child(4) {
+#slide1:checked ~ .con .content__text {
+  margin-left: 0%;
+}
+
+#slide2:checked ~ .con .content__text {
+  margin-left: -100%;
+}
+
+#slide3:checked ~ .con .content__text {
+  margin-left: -200%;
+}
+
+#slide4:checked ~ .con .content__text {
+  margin-left: -300%;
+}
+
+#slide1:checked ~ .con .nav-buttons label:nth-child(1),
+#slide2:checked ~ .con .nav-buttons label:nth-child(2),
+#slide3:checked ~ .con .nav-buttons label:nth-child(3),
+#slide4:checked ~ .con .nav-buttons label:nth-child(4) {
   width: 1em;
   height: 1em;
   background-color: inherit;
