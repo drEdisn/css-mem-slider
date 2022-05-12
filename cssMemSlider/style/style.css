@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Macondo', cursive;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(70, 70, 70);
+}
+
+input {
+  display: none;
+}
+
+.content {
+  height: 80%;
+  width: 400%;
+  display: flex;
+  transform: translateX(37.5%);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: 0.5s;
+  margin-top: 2em;
+}
+
+/* .content__block */
+
+.content__block{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content__block-text {
+  margin-left: 40px;
+}
+
+.content__block-img {
+  height: 30rem;
+  width: 54rem;
+  object-fit: contain;
+  align-self: center;
+}
+
+.nav-buttons {
+  display: flex;
+  height: 2em;
+  width: 8em;
+  position: absolute;
+}
+
+.nav-buttons__item {
+  width: 2em;
+  height: 2em;
+  background-color: aqua;
+  border: 0.5em solid rgb(70, 70, 70);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-buttons__item:hover {
+  background-color: white;
+}
+
+#slide1:checked ~ .content {
+  margin-left: 0%;
+}
+
+#slide2:checked ~ .content {
+  margin-left: -200%;
+}
+
+#slide3:checked ~ .content {
+  margin-left: -400%;
+}
+
+#slide4:checked ~ .content {
+  margin-left: -600%;
+}
+
+#slide1:checked ~ .nav-buttons label:nth-child(1),
+#slide2:checked ~ .nav-buttons label:nth-child(2),
+#slide3:checked ~ .nav-buttons label:nth-child(3),
+#slide4:checked ~ .nav-buttons label:nth-child(4) {
+  width: 1em;
+  height: 1em;
+  background-color: inherit;
+  border: 0.1em solid aqua;
+  margin: 0.5em;
+}
