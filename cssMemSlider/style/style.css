@@ -157,18 +157,18 @@ input {
   margin: 0.5em;
 }
 
-.item1:hover .label__content,
-.item2:hover .label__content,
-.item3:hover .label__content,
-.item4:hover .label__content{
-  background-color: white;
-}
-
 #slide1:checked ~ .con label:nth-child(1):hover .label__content,
 #slide2:checked ~ .con label:nth-child(2):hover .label__content,
 #slide3:checked ~ .con label:nth-child(3):hover .label__content,
 #slide4:checked ~ .con label:nth-child(4):hover .label__content {
   border-color: white;
+}
+
+.item1:hover .label__content,
+.item2:hover .label__content,
+.item3:hover .label__content,
+.item4:hover .label__content{
+  background-color: white;
 }
 
 @media (max-width: 768px) {
