@@ -1,7 +1,5 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+* {
+  margin: 0;
 }
 
 html {
@@ -12,8 +10,9 @@ body {
   font-family: 'Macondo', cursive;
   height: 100%;
   width: 100%;
-  color: white;
-  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(0, 255, 247), rgb(240, 5, 185));
 }
 
 input {
@@ -85,6 +84,9 @@ input {
   width: 70%;
   object-fit: contain;
   align-self: center;
+  border-radius: 0.6em;
+  background: linear-gradient(45deg, rgb(83, 148, 171), rgb(185, 6, 143));
+  filter:  drop-shadow(0 0 0.4em rgb(0, 0, 0)) drop-shadow(0 0 0.8em rgb(73, 73, 73));
 }
 
 .nav-buttons {
@@ -93,7 +95,6 @@ input {
   height: 2em;
   width: 8em;
   z-index: 10;
-  background-color: rgb(70, 70, 70);
 }
 
 .nav-buttons__item {
@@ -110,6 +111,7 @@ input {
   width: 1em;
   height: 1em;
   background-color: aqua;
+  border: 0.1em solid aqua;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -153,8 +155,6 @@ input {
   width: 1em;
   height: 1em;
   background-color: inherit;
-  border: 0.1em solid aqua;
-  margin: 0.5em;
 }
 
 #slide1:checked ~ .con label:nth-child(1):hover .label__content,
@@ -169,21 +169,23 @@ input {
 .item3:hover .label__content,
 .item4:hover .label__content{
   background-color: white;
+  border-color: white;
 }
 
 @media (max-width: 768px) {
   .con {
     flex-direction: column-reverse;
-    height: 15%;
+    height: 20%;
+    width: 71%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
   .view__text {
     height: 25%;
     width: 80%;
   }
-  
-  .content__block-text {
-    text-align: center;
+  .nav-buttons {
+    align-self: center;
   }
+
 }
