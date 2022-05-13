@@ -99,24 +99,19 @@ input {
 .nav-buttons__item {
   width: 2em;
   height: 2em;
+  background-color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label__content {
+  width: 1em;
+  height: 1em;
   background-color: aqua;
-  border: 0.5em solid rgb(70, 70, 70);
   border-radius: 50%;
   cursor: pointer;
-}
-
-#slide1:not(:checked) ~ .con .nav-buttons label:nth-child(1):hover,
-#slide2:not(:checked) ~ .con .nav-buttons label:nth-child(2):hover,
-#slide3:not(:checked) ~ .con .nav-buttons label:nth-child(3):hover,
-#slide4:not(:checked) ~ .con .nav-buttons label:nth-child(4):hover {
-  background-color: white;
-}
-
-#slide1:checked ~ .con .nav-buttons label:nth-child(1):hover,
-#slide2:checked ~ .con .nav-buttons label:nth-child(2):hover,
-#slide3:checked ~ .con .nav-buttons label:nth-child(3):hover,
-#slide4:checked ~ .con .nav-buttons label:nth-child(4):hover {
-  border-color: white;
 }
 
 #slide1:checked ~ .content {
@@ -151,13 +146,44 @@ input {
   margin-left: -300%;
 }
 
-#slide1:checked ~ .con .nav-buttons label:nth-child(1),
-#slide2:checked ~ .con .nav-buttons label:nth-child(2),
-#slide3:checked ~ .con .nav-buttons label:nth-child(3),
-#slide4:checked ~ .con .nav-buttons label:nth-child(4) {
+#slide1:checked ~ .con label:nth-child(1) .label__content,
+#slide2:checked ~ .con label:nth-child(2) .label__content,
+#slide3:checked ~ .con label:nth-child(3) .label__content,
+#slide4:checked ~ .con label:nth-child(4) .label__content {
   width: 1em;
   height: 1em;
   background-color: inherit;
   border: 0.1em solid aqua;
   margin: 0.5em;
+}
+
+.item1:hover .label__content,
+.item2:hover .label__content,
+.item3:hover .label__content,
+.item4:hover .label__content{
+  background-color: white;
+}
+
+#slide1:checked ~ .con label:nth-child(1):hover .label__content,
+#slide2:checked ~ .con label:nth-child(2):hover .label__content,
+#slide3:checked ~ .con label:nth-child(3):hover .label__content,
+#slide4:checked ~ .con label:nth-child(4):hover .label__content {
+  border-color: white;
+}
+
+@media (max-width: 768px) {
+  .con {
+    flex-direction: column-reverse;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .view__text {
+    height: 25%;
+    width: 80%;
+  }
+  
+  .content__block-text {
+    text-align: center;
+  }
 }
